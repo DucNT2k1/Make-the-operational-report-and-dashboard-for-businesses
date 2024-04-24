@@ -1,11 +1,8 @@
-# 👨🏼‍⚕️ Telecom Churn Analysis
-
-
 # :books: Table of Contents <!-- omit in toc -->
 
 - [:briefcase: Dataset and Requirement](#dataset-and-requirement)
-- [:bookmark_tabs: Example Datasets](#bookmark_tabsexample-datasets)
-- [🔎 Explore data and test model](#--explore-data-and-test-model)
+- [:bookmark_tabs: Dataset Information](#bookmark_tabsdataset-information)
+- [🔎 Clean data, make operational report and dashboard](#--clean-data,-make-operational-report-and-dashboard)
 - [📃 What can you practice with this case study?](#-what-can-you-practice-with-this-case-study)
 
 ---
@@ -21,69 +18,118 @@ Dataset contains information about the operations of a Vietnamese company in the
 - Make a operational report and dashboard to monitor and evaluate company performance in the third quarter of 2020
 
 ---
-# :bookmark_tabs:Example Datasets
+# :bookmark_tabs:Dataset Information
 
-<details><summary> 👆🏼 Click to expand Dataset information </summary>
+<details><summary> 👆🏼 MKT table </summary>
 
-- CustomerID: A unique ID that identifies each customer.
-- Gender: Indicate if the customer is a male or a female
-- SeniorCitizen: Indicate if the customer is a senior citizen: 1, 0
-- Partner: Indicate if the customer has a partner: Yes, No
-- Dependents: Indicate if the customer has dependents: Yes, No
-- Tenure: Indicates the total amount of months that the customer has been with the company by the end of the quarter specified above.
-- Phone Service: Indicates if the customer subscribes to home phone service with the company: Yes, No
-- Avg Monthly Long Distance Charges: Indicates the customer’s average long distance charges, calculated to the end of the quarter specified above.
-- Multiple Lines: Indicates if the customer subscribes to multiple telephone lines with the company: Yes, No
-- Internet Service: Indicates if the customer subscribes to Internet service with the company: No, DSL, Fiber Optic, Cable.
-- Avg Monthly GB Download: Indicates the customer’s average download volume in gigabytes, calculated to the end of the quarter specified above.
-- Online Security: Indicates if the customer subscribes to an additional online security service provided by the company: Yes, No
-- Online Backup: Indicates if the customer subscribes to an additional online backup service provided by the company: Yes, No
-- Device Protection Plan: Indicates if the customer subscribes to an additional device protection plan for their Internet equipment provided by the company: Yes, No
-- Premium Tech Support: Indicates if the customer subscribes to an additional technical support plan from the company with reduced wait times: Yes, No
-- Streaming TV: Indicates if the customer uses their Internet service to stream television programing from a third party provider: Yes, No. The company does not charge an additional fee for this service.
-- Streaming Movies: Indicates if the customer uses their Internet service to stream movies from a third party provider: Yes, No. The company does not charge an additional fee for this service.
-- Streaming Music: Indicates if the customer uses their Internet service to stream music from a third party provider: Yes, No. The company does not charge an additional fee for this service.
-- Unlimited Data: Indicates if the customer has paid an additional monthly fee to have unlimited data downloads/uploads: Yes, No
-- Contract: Indicates the customer’s current contract type: Month-to-Month, One Year, Two Year.
-- Paperless Billing: Indicates if the customer has chosen paperless billing: Yes, No
-- Payment Method: Indicates how the customer pays their bill: Bank Withdrawal, Credit Card, Mailed Check
-- Monthly Charge: Indicates the customer’s current total monthly charge for all their services from the company.
-- Total Charges: Indicates the customer’s total charges, calculated to the end of the quarter specified above.
-- Churn: Indicate if the customer churns: Yes, No
+This data has 21 columns, including:
+
+- Date:The date the marketing campaign was implemented
+- Channel: Channel used to display ads
+- MKTer: Name of staff member
+- Chiến dịch: Name of marketing campaign
+- Chi phí Marketing: Marketing expense
+- Impression: Number of ad impressions
+- Reach: Total number of unique individuals exposed to the ad
+- Click: Number of clicks on ad
+- Share: Number of shares
+- Cmt: Number of comments
+- Inbox: Number of inboxs
+- Lead MKT: Number of Leads
+- Đơn hàng: Numbers of orders
+- Doanh thu: Revenue
+- Paid Revenue 1: revenue generated from products that were sold through marketing campaign
+- Giá/Lead: Expense per Lead
+- Đơn/Lead: Order per Lead
+- CPM: Expense per 1000 Impressions
+- CPC: Expense per Click
+- Giá Mess\n(Cmt + Inbox): Expense per Cmt or Inbox
+- Mục danh sách: Total marketing expenses and taxes
 
  
 
 </details>
 
-<details><summary> 👆🏼 Click to expand Dataset sample rows </summary>
+<details><summary> 👆🏼 Sales table </summary>
 
-<div align="center">
+Data has 21 columns, including:
 
-**Table** 
-
-<div align="center">
-First 10 rows
-
-| customerID   | gender   |   SeniorCitizen | Partner   | Dependents   |   tenure | PhoneService   | MultipleLines    | InternetService   | OnlineSecurity   | OnlineBackup   | DeviceProtection   | TechSupport   | StreamingTV   | StreamingMovies   | Contract       | PaperlessBilling   | PaymentMethod             |   MonthlyCharges |   TotalCharges | Churn   |
-|:-------------|:---------|----------------:|:----------|:-------------|---------:|:---------------|:-----------------|:------------------|:-----------------|:---------------|:-------------------|:--------------|:--------------|:------------------|:---------------|:-------------------|:--------------------------|-----------------:|---------------:|:--------|
-| 7590-VHVEG   | Female   |               0 | Yes       | No           |        1 | No             | No phone service | DSL               | No               | Yes            | No                 | No            | No            | No                | Month-to-month | Yes                | Electronic check          |            29.85 |          29.85 | No      |
-| 5575-GNVDE   | Male     |               0 | No        | No           |       34 | Yes            | No               | DSL               | Yes              | No             | Yes                | No            | No            | No                | One year       | No                 | Mailed check              |            56.95 |        1889.5  | No      |
-| 3668-QPYBK   | Male     |               0 | No        | No           |        2 | Yes            | No               | DSL               | Yes              | Yes            | No                 | No            | No            | No                | Month-to-month | Yes                | Mailed check              |            53.85 |         108.15 | Yes     |
-| 7795-CFOCW   | Male     |               0 | No        | No           |       45 | No             | No phone service | DSL               | Yes              | No             | Yes                | Yes           | No            | No                | One year       | No                 | Bank transfer (automatic) |            42.3  |        1840.75 | No      |
-| 9237-HQITU   | Female   |               0 | No        | No           |        2 | Yes            | No               | Fiber optic       | No               | No             | No                 | No            | No            | No                | Month-to-month | Yes                | Electronic check          |            70.7  |         151.65 | Yes     |
-| 9305-CDSKC   | Female   |               0 | No        | No           |        8 | Yes            | Yes              | Fiber optic       | No               | No             | Yes                | No            | Yes           | Yes               | Month-to-month | Yes                | Electronic check          |            99.65 |         820.5  | Yes     |
-| 1452-KIOVK   | Male     |               0 | No        | Yes          |       22 | Yes            | Yes              | Fiber optic       | No               | Yes            | No                 | No            | Yes           | No                | Month-to-month | Yes                | Credit card (automatic)   |            89.1  |        1949.4  | No      |
-| 6713-OKOMC   | Female   |               0 | No        | No           |       10 | No             | No phone service | DSL               | Yes              | No             | No                 | No            | No            | No                | Month-to-month | No                 | Mailed check              |            29.75 |         301.9  | No      |
-| 7892-POOKP   | Female   |               0 | Yes       | No           |       28 | Yes            | Yes              | Fiber optic       | No               | No             | Yes                | Yes           | Yes           | Yes               | Month-to-month | Yes                | Electronic check          |           104.8  |        3046.05 | Yes     |
-| 6388-TABGU   | Male     |               0 | No        | Yes          |       62 | Yes            | No               | DSL               | Yes              | Yes            | No                 | No            | No            | No                | One year       | No                 | Bank transfer (automatic) |            56.15 |        3487.95 | No      |
-
-</div>
-</div>
+- 'Unnamed: 0' : Unclear
+- Giờ: The time that customers leave their information on the ads
+- Khách hàng: Name of Lead
+- SĐT: Number phone of Lead
+- Channel: Channel which customer is advertised
+- Chiến dịch: Marketing campaign which customer is advertised
+- Content: Unclear
+- Marketer 2: Name of marketer
+- Type of Lead: Type of Lead, includes 2 values: Dathang(ordered) and Tuvan (being consulted)
+- Sales Admin xác nhận Type of Lead: Confirmation of type of Lead by Sales Admin
+- Sales: Name of Sales
+- Số lần tương tác: Number of calls
+- Ngày gọi: The day the employee contacted the Lead
+- Trạng thái: Lead status
+- Level: Lead status in more detail
+- Ngày hẹn gọi lại: The date the customer makes an appointment to call back
+- Close date: The date the customer completes payment
+- Tỉnh/TP: Province/City where the customer lives
+- Số lượng bộ sách: Number of book sets ordered
+- Số tiền giảm giá: Discount amount
+- Tổng tiền: Total amount that the customer needs to pay
 
 </details>
 
+<details><summary> 👆🏼 Vận đơn table </summary>
+ This data has 45 columns, including:
+
+- STT: serial number column
+- Mã đơn hàng: code orders
+- Ghi chú đơn hàng: order notes
+- Tags đơn hàng: order tags
+- Nhân viên tạo đơn: Name of the employee creating the order
+- Chi nhánh: branch
+- Nguồn: source
+- Mã vận đơn: bill of lading code
+- Tình trạng gói hàng: order status
+- Trạng thái đối tác: shipping partner status
+- Lý do hủy đơn: reason for cancellation
+- Ngày đóng gói: the date the order was packed
+- Ngày hẹn giao hàng: delivery appointment date
+- Ngày xuất kho: date of inventory
+- Ngày giao hàng: delivery date
+- Đối tác giao hàng: name of shipping partner company
+- Dịch vụ giao hàng: name of delivery service
+- Khối lượng: package volume
+- Kích thước(DxRxC): package size
+- Tên người nhận: name of consignee
+- SĐT người nhận: number phone of consignee
+- Địa chỉ giao hàng: delivery address
+- Tỉnh/Thành: the province where the customer lives
+- Quận/Huyện: the district where the customer lives
+- Phường xã: the ward where the customer lives
+- Trạng thái đối soát: Control status
+- Tiền khách phải trả cho đơn: the amount the customer must pay
+- Khách hàng đã trả: the amount the customer has paid
+- Hình thức thanh toán: payments
+- Tổng tiền thu hộ: total amount collected
+- Phí vận chuyển: transport expense
+- Người trả phí: the party must pay the fee
+- Phí trả đối tác: the expense paid to partner company
+- Ghi chú đơn giao: notes for carrier
+- Mã sản phẩm: product code
+- Tên sản phẩm: product name
+- Ghi chú sản phẩm: product note
+- Serial: Unclear
+- Đơn vị tính: unit
+- Đơn giá: unit price
+- CK sản phẩm: product discount
+- CK tổng đơn hàng: order discount
+- Thuế cho từng sản phẩm: tax for each product
+- Tổng tiền hàng: total order amount
+</details>  
+
 ---
-## 🔎  Explore data and test model
+
+## 🔎  Clean data, make operational report and dashboard
 
 ### The Process is following - [Code & Presentation](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/EDA%20%2B%20Machine%20Learning%20Analysis.md)or [EDA Code](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_EDA.ipynb) and [Modeling Code](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_Model_Building.ipynb)
 
