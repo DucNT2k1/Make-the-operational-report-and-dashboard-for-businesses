@@ -131,6 +131,6 @@ Data has 21 columns, including:
 ## 🔎  Clean data then make operational report and dashboard
 
 ### The Process is following 
-- [Cleaning data](https://colab.research.google.com/drive/1yyFx9yizeurIivMRMfWL0qw66xMab9SN?hl=vi#scrollTo=KWSOT0ye1Om7)
+- [Cleaning data](https://colab.research.google.com/drive/1yyFx9yizeurIivMRMfWL0qw66xMab9SN?hl=vi)
 - [Operational Report](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_EDA.ipynb) 
 - [Dashboard](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_Model_Building.ipynb)
