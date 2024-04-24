@@ -3,7 +3,6 @@
 - [:briefcase: Dataset and Requirement](#dataset-and-requirement)
 - [:bookmark_tabs: Dataset Information](#bookmark_tabsdataset-information)
 - [🔎 Clean data then make operational report and dashboard](#--clean-data-then-make-operational-report-and-dashboard)
-- [📃 What can you practice with this case study?](#-what-can-you-practice-with-this-case-study)
 
 ---
 
