@@ -12,9 +12,13 @@
 
 # Dataset and Requirement
 
-The Telco customer churn data contains information about a fictional telco company that provided home phone and Internet services to 7043 customers in California in Q3. It indicates which customers have left, stayed, or signed up for their service.
-### ❓ Question
-Can you predict whether customers will churn based on customer data ?
+Dataset contains information about the operations of a Vietnamese company in the third quarter of 2020, including 3 tables:
+- MKT: Contains information about Marketing activities
+- Sales: Contains information about sales activities
+- Vận đơn: contains information about bill of lading activities 
+### ❓ Requirement
+- Clean dataset
+- Make a operational report and dashboard to monitor and evaluate company performance in the third quarter of 2020
 
 ---
 # :bookmark_tabs:Example Datasets
