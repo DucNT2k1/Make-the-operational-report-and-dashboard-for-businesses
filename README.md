@@ -2,7 +2,7 @@
 
 - [:briefcase: Dataset and Requirement](#dataset-and-requirement)
 - [:bookmark_tabs: Dataset Information](#bookmark_tabsdataset-information)
-- [🔎 Clean data, make operational report and dashboard](#--clean-data,-make-operational-report-and-dashboard)
+- [🔎 Clean data then make operational report and dashboard](#--clean-data-then-make-operational-report-and-dashboard)
 - [📃 What can you practice with this case study?](#-what-can-you-practice-with-this-case-study)
 
 ---
@@ -129,7 +129,7 @@ Data has 21 columns, including:
 
 ---
 
-## 🔎  Clean data, make operational report and dashboard
+## 🔎  Clean data then make operational report and dashboard
 
 ### The Process is following - [Code & Presentation](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/EDA%20%2B%20Machine%20Learning%20Analysis.md)or [EDA Code](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_EDA.ipynb) and [Modeling Code](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_Model_Building.ipynb)
 
