@@ -132,5 +132,5 @@ Data has 21 columns, including:
 
 ### The Process is following 
 - [Cleaning data](https://colab.research.google.com/drive/1yyFx9yizeurIivMRMfWL0qw66xMab9SN?hl=vi)
-- [Operational Report](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_EDA.ipynb) 
+- [Operational Report](https://1drv.ms/b/c/cec2721c7222ade2/EauLpQgt5V1KhRSgeqEgGHoBPFZLdyjDjEI6-tx9832KVA?e=t7aota) 
 - [Dashboard](https://github.com/anhtuan0811/Telecom-Churn-Analysis/blob/main/Churn_Analysis_Model_Building.ipynb)
