@@ -11,7 +11,7 @@
 Dataset contains information about the operations of a Vietnamese company in the third quarter of 2020, including 3 tables:
 - MKT: Contains information about Marketing activities
 - Sales: Contains information about sales activities
-- Vận đơn: contains information about bill of lading activities 
+- Vận đơn: Contains information about bill of lading activities 
 ### ❓ Requirement
 - Clean dataset
 - Make a operational report and dashboard to monitor and evaluate company performance in the third quarter of 2020
